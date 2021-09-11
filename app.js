@@ -1,4 +1,4 @@
-var notes = [2000,500,100,20,10,5,1];
+var notesAvailable = [2000,500,100,20,10,5,1];
 var btnCheck = document.querySelector('#btn-check');
 var inputTotalBill = document.querySelector('#input-total-bill') ;
 var inputCashGiven = document.querySelector('#input-cash-given') 
@@ -26,16 +26,20 @@ function validateTotalBillAndCashGiven(){
     // else{
     //     console.log('calculating');
     // }
-    if(inputTotalBill.value >0 && inputCashGiven.value>0 && inputCashGiven.value >=inputTotalBill.value){
-        if(inputCashGiven.value === inputTotalBill.value){
+    totalBill=Number(inputTotalBill.value);
+    cashGiven = Number(inputCashGiven.value)
+    if( totalBill>0 && cashGiven>0 && cashGiven>=totalBill){
+        if(cashGiven === totalBill){
             console.log('nothing to return');
         }
         else{
             console.log('calculating');
+            var amountToBeReturned = inputCashGiven.value- inputTotalBill.value;
+            console.log(amountToBeReturned);
         }
     }
     else{
-    console.log('invalid input');
+        console.log((inputCashGiven.value),' ', inputTotalBill.value,' invalid input',inputCashGiven.value>=inputTotalBill.value);
     }
 
 }
