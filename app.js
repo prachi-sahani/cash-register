@@ -2,7 +2,15 @@ var notesAvailable = [2000,500,100,20,10,5,1];
 var btnCheck = document.querySelector('#btn-check');
 var inputTotalBill = document.querySelector('#input-total-bill') ;
 var inputCashGiven = document.querySelector('#input-cash-given') 
-console.log(btnCheck);
+var noteCount = {
+    2000 : 0,
+    500 : 0,
+    100: 0,
+    20: 0,
+    10:0,
+    5: 0,
+    1: 0
+}
 // inputTotalBill.addEventListener('change',enableCashGiven)
 
 btnCheck.addEventListener('click', validateTotalBillAndCashGiven);
@@ -17,29 +25,50 @@ btnCheck.addEventListener('click', validateTotalBillAndCashGiven);
 // }
 
 function validateTotalBillAndCashGiven(){
-    // if(inputTotalBill <= 0 && inputCashGiven<=0 || inputTotalBill > inputCashGiven){
-    //     console.log('invalid input');
-    // }
-    // else if(inputCashGiven === inputTotalBill){
-    //     console.log('you need not return anything')
-    // }
-    // else{
-    //     console.log('calculating');
-    // }
+    
     totalBill=Number(inputTotalBill.value);
-    cashGiven = Number(inputCashGiven.value)
+    cashGiven = Number(inputCashGiven.value);
+
+    
     if( totalBill>0 && cashGiven>0 && cashGiven>=totalBill){
-        if(cashGiven === totalBill){
-            console.log('nothing to return');
-        }
-        else{
-            console.log('calculating');
-            var amountToBeReturned = inputCashGiven.value- inputTotalBill.value;
-            console.log(amountToBeReturned);
-        }
+        calculateChange(totalBill,cashGiven);
+        
     }
     else{
-        console.log((inputCashGiven.value),' ', inputTotalBill.value,' invalid input',inputCashGiven.value>=inputTotalBill.value);
+        console.log('invalid input');
     }
 
+}
+
+function calculateChange(totalBill,cashGiven){
+    var noteCount = {
+        2000 : 0,
+        500 : 0,
+        100: 0,
+        20: 0,
+        10:0,
+        5: 0,
+        1: 0
+    }
+    if(cashGiven === totalBill){
+        return noteCount;
+    }
+    else{
+        console.log('calculating');
+        var amountToBeReturned = cashGiven- totalBill;
+        var remainingAmount = amountToBeReturned;
+        notesAvailable.forEach((note)=>{
+            // console.log(note);
+            var numberOfNote = 0;
+            if(remainingAmount >= note){
+                numberOfNote = Math.trunc(remainingAmount / note);
+                remainingAmount-= note*numberOfNote;
+                noteCount[note]=numberOfNote;
+                console.log(numberOfNote, remainingAmount);
+
+            }
+        })
+        console.log(noteCount);
+    }
+    return noteCount;
 }
