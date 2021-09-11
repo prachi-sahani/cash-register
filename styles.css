@@ -1,0 +1,12 @@
+#input-total-bill, #input-cash-given{
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+#btn-check{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 0.5px solid;
+}
