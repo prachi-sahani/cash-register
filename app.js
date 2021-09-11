@@ -38,7 +38,6 @@ function validateTotalBillAndCashGiven(){
         else if(cashGiven<totalBill){
             showMessage('Ask for more cash!')
         }
-        console.log('invalid');
     }
 
 }
@@ -49,7 +48,6 @@ function showMessage(message){
 
 
 function calculateChange(totalBill,cashGiven){
-        console.log('calculating');
         var amountToBeReturned = cashGiven- totalBill;
         var remainingAmount = amountToBeReturned;
         notesAvailable.forEach((note,index)=>{
