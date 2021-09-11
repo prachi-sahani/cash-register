@@ -1,12 +1,125 @@
-#input-total-bill, #input-cash-given{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --primary-color :#312E81;
+}
+
+header{
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.heading{
+    /* color: var(--primary-color); */
+    margin: 0 !important;
+}
+
+.sub-heading{
+    font-size: larger;
+}
+
+input{
     display: block;
-    margin: 1rem 0;
-    padding: 0.5rem;
+    margin: 1rem auto;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    width: 50%;
+    border: 2px var(--primary-color) solid;
+}
+
+input:focus{
+    border: 2px var(--primary-color) solid;
+
+}
+
+.error-message{
+    color: red;
+    padding: 1rem;
+}
+
+label{
+    font-weight: bold;
+    font-size: large;
 }
 
 #btn-check{
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--primary-color);
+    font-size: large;
+    color: white;
     border-radius: 0.5rem;
     outline: none;
-    border: 0.5px solid;
+    border: 1px solid white;
+    
 }
+
+td, th{
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem;
+    text-align: center;
+    /* border-collapse: collapse; */
+}
+
+th{
+    width: 100px;
+    color: white;
+    background-color: var(--primary-color);
+}
+.heading-notes{
+    border-bottom-color:  white ;
+}
+
+table{
+    border-collapse: collapse;
+    max-width: 100%;
+    width: 100%;
+    /* margin: 1rem; */
+}
+
+caption{
+    font-size: x-large;
+    font-weight: bolder;
+    /* color: var(--primary-color); */
+    padding: 1rem;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .list-no-bullet{
+    list-style: none;
+    padding-inline-start: 0;
+  
+  }
+  
+  .list-inline{
+    display: inline;
+    padding: 0.75rem;
+  }
+  
+  .icon{
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .footer{
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+  }
