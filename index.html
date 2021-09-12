@@ -14,15 +14,21 @@
         <h1 class="heading">Cash Register Manager</h1>
     </header>
     <div class="container">
-        <p class="sub-heading">Enter the bill amount and cash received from the customer and know minimum number of notes to be returned.</p>
-        <label for="input-total-bill">Bill amount :</label>
-        <input id="input-total-bill" type="number" placeholder="Enter bill amount" />
-        <br>
-        <label for="input-cash-given">Cash received:</label>
-        <input id="input-cash-given" type="number" placeholder="Enter cash received" />
-        <br>
+        <p class="sub-heading">Enter the bill amount and cash received from the customer and know minimum number of
+            notes to be returned.</p>
+        <p>
+            <label for="input-total-bill">Bill amount :</label>
+            <input id="input-total-bill" type="number" placeholder="Enter bill amount" />
+            <button id="btn-next">Next</button>
+
+        </p>
+        <p id="div-input-cash-received">
+            <label for="input-cash-received">Cash received:</label>
+            <input id="input-cash-received" type="number" placeholder="Enter cash received" />
+            <button id="btn-check">Check</button>
+
+        </p>
         <div></div>
-        <button id="btn-check">Check</button>
         <div id="message" class="error-message"></div>
         <div class="div-table" style="overflow-x: auto; width: 100%;">
             <table>
@@ -48,14 +54,14 @@
                     <td class="count"></td>
                     <td class="count"></td>
                     <td class="count"></td>
-                    
+
                 </tr>
             </table>
         </div>
-      
+
     </div>
     <footer class="footer">
-          
+
         <div style="background-color: var(--primary-color); padding: 1rem;">
             <small>Get in touch</small>
             <ul class="list-no-bullet">
@@ -74,15 +80,15 @@
                         <img class="icon" src="images/gmail.png" />
                     </a>
                 </li>
-    
+
             </ul>
             <small>
                 &#169; | 2021 | prachisahani
             </small>
         </div>
-        
+
     </footer>
-    
+
 
     <script src="app.js" type="text/javascript"></script>
 </body>

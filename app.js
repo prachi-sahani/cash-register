@@ -1,12 +1,14 @@
 var notesAvailable = [2000,500,100,20,10,5,1];
 var btnCheck = document.querySelector('#btn-check');
+var btnNext = document.querySelector('#btn-next');
 var inputTotalBill = document.querySelector('#input-total-bill') ;
-var inputCashGiven = document.querySelector('#input-cash-given') 
+var inputCashGiven = document.querySelector('#input-cash-received') 
 var count = document.querySelectorAll('.count');
 var messageDiv = document.querySelector('#message')
+var divInputCashGiven=document.querySelector('#div-input-cash-received')
 // inputTotalBill.addEventListener('change',enableCashGiven)
 
-btnCheck.addEventListener('click', validateTotalBillAndCashGiven);
+btnNext.addEventListener('click', validateBillAmount);
 
 // function enableCashGiven(){
 //     if(inputTotalBill >0){
@@ -17,8 +19,23 @@ btnCheck.addEventListener('click', validateTotalBillAndCashGiven);
 //     }
 // }
 
+function validateBillAmount(){
+    totalBill=Number(inputTotalBill.value);
+    if(totalBill > 0){
+         btnNext.style.display='none';
+         divInputCashGiven.style.display='block';
+         messageDiv.innerHTML="";
+
+
+    }
+    else{
+        showMessage('Enter valid bill amount')
+    }
+}
+btnCheck.addEventListener('click', validateTotalBillAndCashGiven);
+
+
 function validateTotalBillAndCashGiven(){
-    
     totalBill=Number(inputTotalBill.value);
     cashGiven = Number(inputCashGiven.value);
 
